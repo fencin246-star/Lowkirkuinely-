@@ -1,2 +1,2 @@
-# LOWKIRKUINELY 
-Lowkey+Kirk+Genuinely= Lowkirkuinely 
+# LOWKIRKENUINELY 
+Lowkey+Kirk+Genuinely= Lowkirkenuinely 
