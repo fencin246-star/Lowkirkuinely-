@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>lowkirkuinely — quotes</title>
+  <title>lowkirkuinely — Quote Generator</title>
 
   <style>
     body {
@@ -14,23 +14,18 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh;
       text-align: center;
+      padding: 10px;
     }
 
-    .box {
+    .container {
+      max-width: 400px;
+      width: 100%;
       background: #111;
       padding: 30px;
       border-radius: 20px;
-      max-width: 400px;
-    }
-
-    button {
-      margin-top: 20px;
-      padding: 12px 20px;
-      border: none;
-      border-radius: 999px;
-      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.7);
     }
 
     nav a {
@@ -39,35 +34,76 @@
       text-decoration: none;
       opacity: 0.7;
     }
+    nav a:hover {
+      opacity: 1;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+      background: #fff;
+      color: #000;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 12px;
+      margin-top: 15px;
+    }
   </style>
 </head>
 <body>
 
-<div class="box">
+<div class="container">
   <nav>
-    <a href="index.html">kirk memes</a>
-    <a href="quotes.html">quote generator</a>
+    <a href="index.html">Kirk Memes</a>
+    <a href="quotes.html">Quote Generator</a>
   </nav>
 
   <h1 id="quote">lowkirkuinely this hit different.</h1>
+  <img id="generatorMeme" src="images/kirk1.jpg" alt="kirk meme">
 
-  <button onclick="newQuote()">generate brainrot</button>
+  <button onclick="newBrainrot()">Generate Brainrot</button>
 </div>
+
+<audio id="popSound" preload="auto">
+  <source src="https://assets.mixkit.co/sfx/preview/mixkit-soft-click-1129.mp3" type="audio/mpeg">
+</audio>
 
 <script>
   const quotes = [
     "lowkirkuinely why am i like this.",
     "lowkirkuinely this altered my brain chemistry.",
-    "lowkirkuinely i fear this is me now.",
-    "lowkirkuinely not me relating.",
+    "lowkirkuinely my brain just went quiet.",
+    "lowkirkuinely not me relating rn.",
     "lowkirkuinely this is a canon event."
   ];
 
-  function newQuote() {
+  const memes = [
+    "images/kirk1.jpg",
+    "images/kirk2.jpg",
+    "images/kirk3.jpg"
+  ];
+
+  function newBrainrot() {
     const q = quotes[Math.floor(Math.random() * quotes.length)];
+    const m = memes[Math.floor(Math.random() * memes.length)];
+
     document.getElementById("quote").textContent = q;
+    document.getElementById("generatorMeme").src = m;
+
+    const sound = document.getElementById("popSound");
+    sound.currentTime = 0;
+    sound.play();
   }
+
+  // load first quote and meme on page load
+  newBrainrot();
 </script>
 
 </body>
 </html>
+
