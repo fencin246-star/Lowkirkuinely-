@@ -1,145 +1,236 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>lowkirkuinely</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>lowkirkuinely</title>
 
-  <style>
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
-      color: #f5f5f5;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-    }
+<style>
+  body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+  }
 
-    .container {
-      max-width: 600px;
-      text-align: center;
-      padding: 40px;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 20px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.4);
-    }
+  .container {
+    max-width: 600px;
+    width: 100%;
+    background: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+    text-align: center;
+  }
 
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-    }
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: #fff;
+    font-weight: bold;
+  }
 
-    p {
-      opacity: 0.85;
-      line-height: 1.6;
-    }
+  p {
+    color: #555;
+    line-height: 1.6;
+  }
 
-    .quote {
-      margin: 30px 0;
-      font-size: 1.3rem;
-      font-style: italic;
-      min-height: 60px;
-    }
+  .quote {
+    margin: 30px 0;
+    font-size: 1.3rem;
+    font-style: italic;
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* fun font for quotes */
+    color: #003366; /* dark blue for quotes */
+    min-height: 60px;
+  }
 
-    button {
-      background: #ffffff;
-      color: #000;
-      border: none;
-      padding: 12px 25px;
-      font-size: 1rem;
-      border-radius: 999px;
-      cursor: pointer;
-      transition: transform 0.15s ease, opacity 0.15s ease;
-    }
+  button {
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+  }
 
-    button:hover {
-      transform: scale(1.05);
-      opacity: 0.9;
-    }
+  button:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
 
-    footer {
-      margin-top: 30px;
-      font-size: 0.8rem;
-      opacity: 0.6;
-    }
-  </style>
+  footer {
+    margin-top: 30px;
+    font-size: 0.8rem;
+    color: #333;
+  }
+</style>
 </head>
 
 <body>
 
-  <div class="container">
-    <h1>lowkirkuinely</h1>
+<div class="container">
+  <h1>lowkirkuinely</h1>
 
-    <p>
-      <strong>lowkirkuinely</strong> (adverb):  
-      when something is genuinely true, but you’re saying it casually,
-      ironically, or like you didn’t mean to say it out loud.
-    </p>
+  <p>
+    <strong>lowkirkuinely</strong> (adverb):  
+    when something is genuinely true, but you’re saying it casually,
+    ironically, or like you didn’t mean to say it out loud.
+  </p>
 
-    <div class="quote" id="quote">
-      lowkirkuinely this kinda hits.
-    </div>
-
-    <button onclick="newQuote()">Generate a lowkirkuinely thought</button>
-
-    <footer>
-      lowkirkuinely not that serious.
-    </footer>
+  <div class="quote" id="quote">
+    lowkirkuinely this kinda hits.
   </div>
 
-  <!-- sound effect -->
-  <audio id="popSound" preload="auto">
-    <source src="https://assets.mixkit.co/sfx/preview/mixkit-soft-click-1129.mp3" type="audio/mpeg">
-  </audio>
+  <button onclick="newQuote()">Generate a lowkirkuinely thought</button>
 
-  <script>
-    const quotes = [
-      "lowkirkuinely why am I like this.",
-      "lowkirkuinely this altered my brain chemistry.",
-      "lowkirkuinely I fear this is me now.",
-      "lowkirkuinely I’m not built for this era.",
-      "lowkirkuinely this healed me a little.",
-      "lowkirkuinely that was personal actually.",
-      "lowkirkuinely I need to log off.",
-      "lowkirkuinely this is a canon event.",
-      "lowkirkuinely I wasn’t ready for that info.",
-      "lowkirkuinely why did that hit so hard.",
-      "lowkirkuinely this is so specific it hurts.",
-      "lowkirkuinely I laughed but internally screamed.",
-      "lowkirkuinely I should not have seen this.",
-      "lowkirkuinely I fear I relate.",
-      "lowkirkuinely this changed the trajectory of my life.",
-      "lowkirkuinely this unlocked something.",
-      "lowkirkuinely this lives rent free in my head.",
-      "lowkirkuinely I’m simply a person trying their best.",
-      "lowkirkuinely this explains a lot actually.",
-      "lowkirkuinely I’m processing this in real time.",
-      "lowkirkuinely not me feeling called out.",
-      "lowkirkuinely this is too real rn.",
-      "lowkirkuinely my brain just went quiet.",
-      "lowkirkuinely I need a minute after that.",
-      "lowkirkuinely I wasn’t emotionally prepared.",
-      "lowkirkuinely this hit different fr.",
-      "lowkirkuinely I need to stare at the ceiling now.",
-      "lowkirkuinely I feel perceived.",
-      "lowkirkuinely this was for me specifically.",
-      "lowkirkuinely why is this accurate."
-    ];
+  <footer>
+    lowkirkuinely not that serious.
+  </footer>
+</div>
 
-    function newQuote() {
-      const random = Math.floor(Math.random() * quotes.length);
-      document.getElementById("quote").textContent = quotes[random];
+<audio id="popSound" preload="auto">
+  <source src="https://assets.mixkit.co/sfx/preview/mixkit-soft-click-1129.mp3" type="audio/mpeg">
+</audio>
 
-      const sound = document.getElementById("popSound");
-      sound.currentTime = 0;
-      sound.play();
-    }
-  </script>
+<script>
+  const quotes = [
+    "lowkirkuinely why am I like this?",
+    "lowkirkuinely this altered my brain chemistry.",
+    "lowkirkuinely I fear this is me now.",
+    "lowkirkuinely my brain just left the chat.",
+    "lowkirkuinely why do I relate so hard?",
+    "lowkirkuinely send help but also snacks.",
+    "lowkirkuinely this is a lot for 2025.",
+    "lowkirkuinely I laughed, I cried, I judged.",
+    "lowkirkuinely how am I supposed to adult?",
+    "lowkirkuinely I shouldn’t be online right now.",
+    "lowkirkuinely someone send coffee and memes.",
+    "lowkirkuinely I don’t feel seen but okay.",
+    "lowkirkuinely this is chaotic energy.",
+    "lowkirkuinely me vibing silently.",
+    "lowkirkuinely why is this my life?",
+    "lowkirkuinely did I just existential crisis?",
+    "lowkirkuinely this hits different.",
+    "lowkirkuinely my brain is buffering.",
+    "lowkirkuinely why am I laughing at this?",
+    "lowkirkuinely my sanity left the building.",
+    "lowkirkuinely me pretending to understand.",
+    "lowkirkuinely this is me screaming internally.",
+    "lowkirkuinely can I get a life update please?",
+    "lowkirkuinely me: ok cool. brain: panic.",
+    "lowkirkuinely I relate in an unhealthy way.",
+    "lowkirkuinely this is too real rn.",
+    "lowkirkuinely I fear this explains me.",
+    "lowkirkuinely someone take my phone.",
+    "lowkirkuinely not me questioning existence.",
+    "lowkirkuinely send funny videos asap.",
+    "lowkirkuinely I am chaos incarnate.",
+    "lowkirkuinely how is this legal content?",
+    "lowkirkuinely I need a minute.",
+    "lowkirkuinely brain.exe has stopped.",
+    "lowkirkuinely why did I do that?",
+    "lowkirkuinely me watching life happen.",
+    "lowkirkuinely I should not be laughing.",
+    "lowkirkuinely this is a mood.",
+    "lowkirkuinely I feel attacked but also blessed.",
+    "lowkirkuinely this is cursed and iconic.",
+    "lowkirkuinely why am I like this fr?",
+    "lowkirkuinely someone call the vibes police.",
+    "lowkirkuinely me existing in 2025.",
+    "lowkirkuinely this is ridiculous.",
+    "lowkirkuinely my brain is shaking.",
+    "lowkirkuinely me: breathe. brain: panic.",
+    "lowkirkuinely this is too much for my soul.",
+    "lowkirkuinely I am laughing and crying.",
+    "lowkirkuinely existential crisis incoming.",
+    "lowkirkuinely send snacks, not lectures.",
+    "lowkirkuinely this will haunt me.",
+    "lowkirkuinely why is this accurate?",
+    "lowkirkuinely my soul has left me.",
+    "lowkirkuinely not me screaming internally.",
+    "lowkirkuinely this is iconic content.",
+    "lowkirkuinely my vibe just shifted.",
+    "lowkirkuinely me: calm. brain: chaos.",
+    "lowkirkuinely someone save me pls.",
+    "lowkirkuinely me trying to function.",
+    "lowkirkuinely this is cursed but funny.",
+    "lowkirkuinely I am living for this.",
+    "lowkirkuinely send coffee not chaos.",
+    "lowkirkuinely me laughing silently.",
+    "lowkirkuinely why is life like this?",
+    "lowkirkuinely I need emotional support.",
+    "lowkirkuinely my brain is vibing weirdly.",
+    "lowkirkuinely send memes instantly.",
+    "lowkirkuinely I fear I relate too much.",
+    "lowkirkuinely this is the energy.",
+    "lowkirkuinely not me panicking quietly.",
+    "lowkirkuinely why is this content so me?",
+    "lowkirkuinely send help and laughter.",
+    "lowkirkuinely I am chaos.",
+    "lowkirkuinely my sanity left the chat.",
+    "lowkirkuinely this is cursed happiness.",
+    "lowkirkuinely me watching the chaos unfold.",
+    "lowkirkuinely why is this hilarious?",
+    "lowkirkuinely I should not relate to this.",
+    "lowkirkuinely send snacks and vibes.",
+    "lowkirkuinely me: okay. brain: why.",
+    "lowkirkuinely this is catastrophic funny.",
+    "lowkirkuinely I am screaming internally.",
+    "lowkirkuinely this hits fr.",
+    "lowkirkuinely why am I like this always?",
+    "lowkirkuinely send me to therapy pls.",
+    "lowkirkuinely my brain says yes, soul says no.",
+    "lowkirkuinely this is too accurate.",
+    "lowkirkuinely I am vibing but dead inside.",
+    "lowkirkuinely me panicking silently.",
+    "lowkirkuinely someone send chaos control.",
+    "lowkirkuinely this is cursed brilliance.",
+    "lowkirkuinely I am laughing but dying.",
+    "lowkirkuinely my vibe is chaotic energy.",
+    "lowkirkuinely not me internally screaming.",
+    "lowkirkuinely this is funny and illegal.",
+    "lowkirkuinely send help or snacks.",
+    "lowkirkuinely I relate in every way.",
+    "lowkirkuinely my brain just crashed.",
+    "lowkirkuinely this is me internally screaming.",
+    "lowkirkuinely chaos is my aesthetic.",
+    "lowkirkuinely me vibing, brain panicking.",
+    "lowkirkuinely why does this exist?",
+    "lowkirkuinely send coffee to my soul.",
+    "lowkirkuinely I shouldn’t be laughing.",
+    "lowkirkuinely this is cursed content.",
+    "lowkirkuinely I am dying laughing.",
+    "lowkirkuinely brain.exe has stopped working.",
+    "lowkirkuinely me existing in chaos.",
+    "lowkirkuinely why is this relatable?",
+    "lowkirkuinely send vibes not lectures.",
+    "lowkirkuinely I feel personally attacked.",
+    "lowkirkuinely this is iconic chaos.",
+    "lowkirkuinely my brain has left the building.",
+    "lowkirkuinely not me laughing and crying.",
+    "lowkirkuinely this is cursed and funny.",
+    "lowkirkuinely send snacks, not pain."
+  ];
+
+  function newQuote() {
+    const random = Math.floor(Math.random() * quotes.length);
+    document.getElementById("quote").textContent = quotes[random];
+
+    const sound = document.getElementById("popSound");
+    sound.currentTime = 0;
+    sound.play();
+  }
+</script>
 
 </body>
 </html>
+
 
 
 
