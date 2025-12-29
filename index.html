@@ -68,6 +68,7 @@
 </head>
 
 <body>
+
   <div class="container">
     <h1>lowkirkuinely</h1>
 
@@ -78,7 +79,7 @@
     </p>
 
     <div class="quote" id="quote">
-      lowkirkuinely… this site kinda hits.
+      lowkirkuinely this kinda hits.
     </div>
 
     <button onclick="newQuote()">Generate a lowkirkuinely thought</button>
@@ -88,47 +89,56 @@
     </footer>
   </div>
 
+  <!-- sound effect -->
+  <audio id="popSound" preload="auto">
+    <source src="https://assets.mixkit.co/sfx/preview/mixkit-soft-click-1129.mp3" type="audio/mpeg">
+  </audio>
+
   <script>
     const quotes = [
-      "lowkirkuinely I should be sleeping right now.",
-      "lowkirkuinely this song changed my life.",
-      "lowkirkuinely I miss how things used to be.",
-      "lowkirkuinely I care more than I pretend.",
-      "lowkirkuinely this website ate.",
-      "lowkirkuinely I’m trying my best fr.",
-      "lowkirkuinely I needed to hear that."
-    "lowkirkuinely why am I like this.",
-    "lowkirkuinely this altered my brain chemistry.",
-    "lowkirkuinely I fear this is me now.",
-    "lowkirkuinely I’m not built for this era.",
-    "lowkirkuinely this healed me a little.",
-    "lowkirkuinely that was personal actually.",
-    "lowkirkuinely I need to log off.",
-    "lowkirkuinely this is a canon event.",
-    "lowkirkuinely I wasn’t ready for that info.",
-    "lowkirkuinely why did that hit so hard.",
-    "lowkirkuinely this is so specific it hurts.",
-    "lowkirkuinely I laughed but internally screamed.",
-    "lowkirkuinely I should not have seen this.",
-    "lowkirkuinely I fear I relate.",
-    "lowkirkuinely this changed the trajectory of my life.",
-    "lowkirkuinely this unlocked something.",
-    "lowkirkuinely this lives rent free in my head.",
-    "lowkirkuinely I’m simply a person trying their best.",
-    "lowkirkuinely this explains a lot actually.",
-    "lowkirkuinely I’m processing this in real time.",
-    "lowkirkuinely not me feeling called out.",
-    "lowkirkuinely this is too real rn.",
-    "lowkirkuinely my brain just went quiet.",
-    "lowkirkuinely I need a minute after that.",
-    "lowkirkuinely I wasn’t emotionally pre
-
+      "lowkirkuinely why am I like this.",
+      "lowkirkuinely this altered my brain chemistry.",
+      "lowkirkuinely I fear this is me now.",
+      "lowkirkuinely I’m not built for this era.",
+      "lowkirkuinely this healed me a little.",
+      "lowkirkuinely that was personal actually.",
+      "lowkirkuinely I need to log off.",
+      "lowkirkuinely this is a canon event.",
+      "lowkirkuinely I wasn’t ready for that info.",
+      "lowkirkuinely why did that hit so hard.",
+      "lowkirkuinely this is so specific it hurts.",
+      "lowkirkuinely I laughed but internally screamed.",
+      "lowkirkuinely I should not have seen this.",
+      "lowkirkuinely I fear I relate.",
+      "lowkirkuinely this changed the trajectory of my life.",
+      "lowkirkuinely this unlocked something.",
+      "lowkirkuinely this lives rent free in my head.",
+      "lowkirkuinely I’m simply a person trying their best.",
+      "lowkirkuinely this explains a lot actually.",
+      "lowkirkuinely I’m processing this in real time.",
+      "lowkirkuinely not me feeling called out.",
+      "lowkirkuinely this is too real rn.",
+      "lowkirkuinely my brain just went quiet.",
+      "lowkirkuinely I need a minute after that.",
+      "lowkirkuinely I wasn’t emotionally prepared.",
+      "lowkirkuinely this hit different fr.",
+      "lowkirkuinely I need to stare at the ceiling now.",
+      "lowkirkuinely I feel perceived.",
+      "lowkirkuinely this was for me specifically.",
+      "lowkirkuinely why is this accurate."
     ];
 
     function newQuote() {
       const random = Math.floor(Math.random() * quotes.length);
       document.getElementById("quote").textContent = quotes[random];
+
+      const sound = document.getElementById("popSound");
+      sound.currentTime = 0;
+      sound.play();
     }
   </script>
+
 </body>
 </html>
+
+
