@@ -1,138 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>lowkirkuinely</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>lowkirkuinely Meme Hub</title>
 
   <style>
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: radial-gradient(circle at top, #1a1a1a, #000);
-      color: #f5f5f5;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
       margin: 0;
-    }
-
-    .container {
-      max-width: 420px;
+      font-family: system-ui, sans-serif;
+      background: #0a0a0a;
+      color: #fff;
       text-align: center;
-      padding: 30px;
-      background: rgba(255, 255, 255, 0.06);
-      border-radius: 25px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
-      backdrop-filter: blur(10px);
     }
 
-    h1 {
-      font-size: 2.6rem;
-      margin-bottom: 10px;
+    header {
+      background: #111;
+      padding: 20px;
+      font-size: 1.8rem;
+      font-weight: bold;
+      border-bottom: 2px solid #2e2e2e;
     }
 
-    .meme {
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
+      max-width: 1000px;
+      margin: 20px auto;
+      padding: 0 10px;
+    }
+
+    .gallery img {
       width: 100%;
-      border-radius: 18px;
-      margin: 20px 0;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.6);
+      cursor: pointer;
+      transition: transform 0.2s ease;
     }
 
-    .quote {
-      margin: 20px 0;
-      font-size: 1.25rem;
-      font-style: italic;
-      min-height: 60px;
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .generator {
+      margin: 30px auto;
+      max-width: 500px;
+      padding: 20px;
+      background: #111;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.7);
+    }
+
+    .generator img {
+      width: 80%;
+      border-radius: 12px;
+      margin: 10px 0;
     }
 
     button {
       background: #fff;
       color: #000;
       border: none;
-      padding: 12px 25px;
+      padding: 12px 20px;
       font-size: 1rem;
       border-radius: 999px;
       cursor: pointer;
-      transition: transform 0.15s ease;
-    }
-
-    button:hover {
-      transform: scale(1.08) rotate(-1deg);
+      margin-top: 10px;
     }
 
     footer {
-      margin-top: 20px;
+      margin: 30px 0;
       font-size: 0.75rem;
       opacity: 0.6;
     }
   </style>
 </head>
-
 <body>
 
-  <div class="container">
-    <h1>lowkirkuinely</h1>
+  <header>lowkirkuinely Meme Hub</header>
 
-    <!-- kirkified meme -->
-    <img id="memeImage" class="meme" src="" alt="kirkified meme">
+  <section class="gallery" id="gallery">
+    <!-- Gallery images go here -->
+  </section>
 
-    <div class="quote" id="quote">
-      lowkirkuinely this altered my brain chemistry.
-    </div>
-
+  <section class="generator">
+    <div id="generatedQuote">click “generate brainrot”</div>
+    <img id="generatorMeme" src="" alt="kirkified meme">
     <button onclick="newBrainrot()">generate brainrot</button>
+  </section>
 
-    <footer>
-      lowkirkuinely i should log off.
-    </footer>
-  </div>
+  <footer>made with brainrot & memes 😌</footer>
 
-  <!-- sound -->
   <audio id="popSound" preload="auto">
     <source src="https://assets.mixkit.co/sfx/preview/mixkit-soft-click-1129.mp3" type="audio/mpeg">
   </audio>
 
   <script>
+    // Meme gallery images
+    const galleryImages = [
+      "images/kirk1.jpg",
+      "images/kirk2.jpg",
+      "images/kirk3.jpg",
+      "images/kirk4.jpg"
+    ];
+
+    // Add gallery to page
+    const gallery = document.getElementById("gallery");
+    galleryImages.forEach(src => {
+      const img = document.createElement("img");
+      img.src = src;
+      gallery.appendChild(img);
+    });
+
+    // Quotes
     const quotes = [
       "lowkirkuinely why am i like this.",
       "lowkirkuinely this altered my brain chemistry.",
-      "lowkirkuinely i fear this is me now.",
-      "lowkirkuinely this is a canon event.",
-      "lowkirkuinely this hit different fr.",
-      "lowkirkuinely not me relating.",
-      "lowkirkuinely i need to log off.",
-      "lowkirkuinely this lives rent free.",
-      "lowkirkuinely i feel perceived.",
-      "lowkirkuinely i wasnt emotionally prepared."
+      "lowkirkuinely my brain just went quiet.",
+      "lowkirkuinely not me relating rn."
     ];
 
-    /* REPLACE THESE WITH YOUR OWN KIRKIFIED MEMES */
+    // Generator memes
     const memes = [
-      "https://placehold.co/400x400?text=kirkified+1",
-      "https://placehold.co/400x400?text=kirkified+2",
-      "https://placehold.co/400x400?text=kirkified+3",
-      "https://placehold.co/400x400?text=kirkified+4"
+      "images/kirk1.jpg",
+      "images/kirk2.jpg",
+      "images/kirk3.jpg"
     ];
 
     function newBrainrot() {
-      const quoteRandom = Math.floor(Math.random() * quotes.length);
-      const memeRandom = Math.floor(Math.random() * memes.length);
+      const quote = quotes[Math.floor(Math.random() * quotes.length)];
+      const meme = memes[Math.floor(Math.random() * memes.length)];
 
-      document.getElementById("quote").textContent = quotes[quoteRandom];
-      document.getElementById("memeImage").src = memes[memeRandom];
+      document.getElementById("generatedQuote").textContent = quote;
+      document.getElementById("generatorMeme").src = meme;
 
       const sound = document.getElementById("popSound");
       sound.currentTime = 0;
       sound.play();
     }
 
-    // load first meme on page load
+    // Initialize
     newBrainrot();
   </script>
 
 </body>
 </html>
+
 
 
 
