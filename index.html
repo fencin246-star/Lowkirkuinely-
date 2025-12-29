@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>lowkirkuinely — kirk memes</title>
+  <title>lowkirkuinely — Kirk Memes</title>
 
   <style>
     body {
@@ -12,12 +11,13 @@
       font-family: system-ui, sans-serif;
       background: #0a0a0a;
       color: white;
-      text-align: center;
     }
 
     header {
+      text-align: center;
       padding: 20px;
       font-size: 2rem;
+      border-bottom: 2px solid #222;
     }
 
     nav a {
@@ -26,23 +26,33 @@
       text-decoration: none;
       opacity: 0.8;
     }
-
     nav a:hover {
       opacity: 1;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
     }
 
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
       gap: 12px;
-      padding: 20px;
-      max-width: 1000px;
-      margin: auto;
     }
 
-    img {
+    .gallery img {
       width: 100%;
       border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      opacity: 0.6;
+      margin-top: 20px;
     }
   </style>
 </head>
@@ -51,17 +61,23 @@
 <header>
   lowkirkuinely
   <nav>
-    <a href="index.html">kirk memes</a>
-    <a href="quotes.html">quote generator</a>
+    <a href="index.html">Kirk Memes</a>
+    <a href="quotes.html">Quote Generator</a>
   </nav>
 </header>
 
-<div class="gallery">
-  <img src="images/kirk1.jpg">
-  <img src="images/kirk2.jpg">
-  <img src="images/kirk3.jpg">
-  <img src="images/kirk4.jpg">
+<div class="container">
+  <div class="gallery">
+    <img src="images/kirk1.jpg" alt="kirk meme 1">
+    <img src="images/kirk2.jpg" alt="kirk meme 2">
+    <img src="images/kirk3.jpg" alt="kirk meme 3">
+    <img src="images/kirk4.jpg" alt="kirk meme 4">
+  </div>
 </div>
+
+<footer>
+  made with brainrot & memes 😌
+</footer>
 
 </body>
 </html>
