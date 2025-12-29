@@ -1,142 +1,67 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>lowkirkuinely</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>lowkirkuinely — kirk memes</title>
 
   <style>
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
-      color: #f5f5f5;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
       margin: 0;
-    }
-
-    .container {
-      max-width: 600px;
+      font-family: system-ui, sans-serif;
+      background: #0a0a0a;
+      color: white;
       text-align: center;
-      padding: 40px;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 20px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.4);
     }
 
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
+    header {
+      padding: 20px;
+      font-size: 2rem;
     }
 
-    p {
-      opacity: 0.85;
-      line-height: 1.6;
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      opacity: 0.8;
     }
 
-    .quote {
-      margin: 30px 0;
-      font-size: 1.3rem;
-      font-style: italic;
-      min-height: 60px;
+    nav a:hover {
+      opacity: 1;
     }
 
-    button {
-      background: #ffffff;
-      color: #000;
-      border: none;
-      padding: 12px 25px;
-      font-size: 1rem;
-      border-radius: 999px;
-      cursor: pointer;
-      transition: transform 0.15s ease, opacity 0.15s ease;
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 12px;
+      padding: 20px;
+      max-width: 1000px;
+      margin: auto;
     }
 
-    button:hover {
-      transform: scale(1.05);
-      opacity: 0.9;
-    }
-
-    footer {
-      margin-top: 30px;
-      font-size: 0.8rem;
-      opacity: 0.6;
+    img {
+      width: 100%;
+      border-radius: 12px;
     }
   </style>
 </head>
-
 <body>
 
-  <div class="container">
-    <h1>lowkirkuinely</h1>
+<header>
+  lowkirkuinely
+  <nav>
+    <a href="index.html">kirk memes</a>
+    <a href="quotes.html">quote generator</a>
+  </nav>
+</header>
 
-    <p>
-      <strong>lowkirkuinely</strong> (adverb):  
-      when something is genuinely true, but you’re saying it casually,
-      ironically, or like you didn’t mean to say it out loud.
-    </p>
-
-    <div class="quote" id="quote">
-      lowkirkuinely this kinda hits.
-    </div>
-
-    <button onclick="newQuote()">Generate a lowkirkuinely thought</button>
-
-    <footer>
-      lowkirkuinely not that serious.
-    </footer>
-  </div>
-
-  <!-- sound effect -->
-  <audio id="popSound" preload="auto">
-    <source src="https://assets.mixkit.co/sfx/preview/mixkit-soft-click-1129.mp3" type="audio/mpeg">
-  </audio>
-
-  <script>
-    const quotes = [
-      "lowkirkuinely why am I like this.",
-      "lowkirkuinely this altered my brain chemistry.",
-      "lowkirkuinely I fear this is me now.",
-      "lowkirkuinely I’m not built for this era.",
-      "lowkirkuinely this healed me a little.",
-      "lowkirkuinely that was personal actually.",
-      "lowkirkuinely I need to log off.",
-      "lowkirkuinely this is a canon event.",
-      "lowkirkuinely I wasn’t ready for that info.",
-      "lowkirkuinely why did that hit so hard.",
-      "lowkirkuinely this is so specific it hurts.",
-      "lowkirkuinely I laughed but internally screamed.",
-      "lowkirkuinely I should not have seen this.",
-      "lowkirkuinely I fear I relate.",
-      "lowkirkuinely this changed the trajectory of my life.",
-      "lowkirkuinely this unlocked something.",
-      "lowkirkuinely this lives rent free in my head.",
-      "lowkirkuinely I’m simply a person trying their best.",
-      "lowkirkuinely this explains a lot actually.",
-      "lowkirkuinely I’m processing this in real time.",
-      "lowkirkuinely not me feeling called out.",
-      "lowkirkuinely this is too real rn.",
-      "lowkirkuinely my brain just went quiet.",
-      "lowkirkuinely I need a minute after that.",
-      "lowkirkuinely I wasn’t emotionally prepared.",
-      "lowkirkuinely this hit different fr.",
-      "lowkirkuinely I need to stare at the ceiling now.",
-      "lowkirkuinely I feel perceived.",
-      "lowkirkuinely this was for me specifically.",
-      "lowkirkuinely why is this accurate."
-    ];
-
-    function newQuote() {
-      const random = Math.floor(Math.random() * quotes.length);
-      document.getElementById("quote").textContent = quotes[random];
-
-      const sound = document.getElementById("popSound");
-      sound.currentTime = 0;
-      sound.play();
-    }
-  </script>
+<div class="gallery">
+  <img src="images/kirk1.jpg">
+  <img src="images/kirk2.jpg">
+  <img src="images/kirk3.jpg">
+  <img src="images/kirk4.jpg">
+</div>
 
 </body>
 </html>
